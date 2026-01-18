@@ -1,0 +1,98 @@
+Detecting compiler hash for triplet x64-windows...
+Compiler found: C:/Program Files (x86)/Microsoft Visual Studio/18/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/cl.exe
+The following packages are already installed:
+    fastgltf:x64-windows@0.8.0 -- git+https://github.com/microsoft/vcpkg@004b3a844521c72dd3699e70c91ff1e095b96b45
+    glm:x64-windows@1.0.1#3 -- git+https://github.com/microsoft/vcpkg@f8b09027afe97c717e95bd81d1d4f37c057d1c78
+  * imgui:x64-windows@1.91.0 -- git+https://github.com/microsoft/vcpkg@09b0e91307c74efecc2b8860b3a25f4e11aa96d3
+    imguizmo:x64-windows@2024-05-29#1 -- git+https://github.com/microsoft/vcpkg@febc8a87c4fbc76155d002254572154b44b3d850
+    nlohmann-json:x64-windows@3.11.3#1 -- git+https://github.com/microsoft/vcpkg@324d32ddba70bc49650d1a067ddcf3d0bfc6c9b6
+    sdl3[core,vulkan]:x64-windows@3.1.6-preview -- git+https://github.com/microsoft/vcpkg@13a8f95b66218cead5be81f83a049a7d4cc266f8
+  * simdjson[core,deprecated,exceptions,threads,utf8-validation]:x64-windows@3.10.1 -- git+https://github.com/microsoft/vcpkg@d2103b03c687dbd783b48300c35531b9961d0523
+    spirv-headers:x64-windows@1.3.296.0 -- git+https://github.com/microsoft/vcpkg@f1e872bb8327f8ab7b0cc5640673236419b497d0
+    stb:x64-windows@2024-07-29#1 -- git+https://github.com/microsoft/vcpkg@c362152d1d02973e7b1ce777960f8a6876656560
+  * vcpkg-cmake:x64-windows@2024-04-23 -- git+https://github.com/microsoft/vcpkg@e74aa1e8f93278a8e71372f1fa08c3df420eb840
+  * vcpkg-cmake-config:x64-windows@2024-05-23 -- git+https://github.com/microsoft/vcpkg@97a63e4bc1a17422ffe4eff71da53b4b561a7841
+    vulkan:x64-windows@2023-12-17 -- git+https://github.com/microsoft/vcpkg@3e8d64ec799440b97c7151f97dd00a53e8e1b5ea
+  * vulkan-headers:x64-windows@1.3.296.0 -- git+https://github.com/microsoft/vcpkg@4dd5a13664c79d5df78837e35061568ad41c07a8
+  * vulkan-loader:x64-windows@1.3.296.0 -- git+https://github.com/microsoft/vcpkg@f96603152b3334e095d5e365effab5588f875000
+    vulkan-memory-allocator:x64-windows@3.1.0 -- git+https://github.com/microsoft/vcpkg@267d8f5eb222e5ea111f11f57ebc8458c6df65e7
+fastgltf provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(fastgltf CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE fastgltf::fastgltf)
+
+The package glm provides CMake targets:
+
+    find_package(glm CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE glm::glm)
+
+    # Or use the header-only version
+    find_package(glm CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE glm::glm-header-only)
+
+imguizmo provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(imguizmo CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE imguizmo::imguizmo)
+
+The package nlohmann-json provides CMake targets:
+
+    find_package(nlohmann_json CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE nlohmann_json::nlohmann_json)
+
+The package nlohmann-json can be configured to not provide implicit conversions via a custom triplet file:
+
+    set(nlohmann-json_IMPLICIT_CONVERSIONS OFF)
+
+For more information, see the docs here:
+    
+    https://json.nlohmann.me/api/macros/json_use_implicit_conversions/
+
+sdl3 provides CMake targets:
+
+    find_package(SDL3 CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE SDL3::SDL3)
+
+spirv-headers is header-only and can be used from CMake via:
+
+  find_path(SPIRV_HEADERS_INCLUDE_DIRS "spirv/1.0/GLSL.std.450.h")
+  target_include_directories(main PRIVATE ${SPIRV_HEADERS_INCLUDE_DIRS})
+
+spirv-headers provides pkg-config modules:
+
+  # Header files from the SPIR-V registry
+  SPIRV-Headers
+
+The package stb provides CMake targets:
+
+    find_package(Stb REQUIRED)
+    target_include_directories(main PRIVATE ${Stb_INCLUDE_DIR})
+vulkan is compatible with built-in CMake targets:
+
+    # https://cmake.org/cmake/help/latest/module/FindVulkan.html
+    find_package(Vulkan REQUIRED)
+    target_link_libraries(main PRIVATE Vulkan::Vulkan)
+
+VulkanMemoryAllocator provides official find_package support. However, it requires the user to provide the include directory containing `vulkan/vulkan.h`. There are multiple ways to achieve this and VulkanMemoryAllocator is compatible with all of them.
+
+    find_package(Vulkan) # https://cmake.org/cmake/help/latest/module/FindVulkan.html, CMake 3.21+
+    find_package(VulkanMemoryAllocator CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE Vulkan::Vulkan GPUOpen::VulkanMemoryAllocator)
+
+or
+
+    find_package(Vulkan) # CMake 3.21+
+    find_package(VulkanMemoryAllocator CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE Vulkan::Headers GPUOpen::VulkanMemoryAllocator)
+
+or
+
+    find_package(VulkanHeaders CONFIG) # From the vulkan-headers port
+    find_package(VulkanMemoryAllocator CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE Vulkan::Headers GPUOpen::VulkanMemoryAllocator)
+
+See the documentation for more information on setting up your project: https://gpuopen-librariesandsdks.github.io/VulkanMemoryAllocator/html/index.html
+
+All requested installations completed successfully in: 2.6 ms

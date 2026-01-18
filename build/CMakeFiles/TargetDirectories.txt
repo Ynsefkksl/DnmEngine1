@@ -1,0 +1,10 @@
+C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/CMakeFiles/RunScript.dir
+C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/CMakeFiles/game.dir
+C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/CMakeFiles/edit_cache.dir
+C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/CMakeFiles/rebuild_cache.dir
+C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/Engine/CMakeFiles/Engine.dir
+C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/Engine/CMakeFiles/edit_cache.dir
+C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/Engine/CMakeFiles/rebuild_cache.dir
+C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/Scripts/CMakeFiles/CameraManager.dir
+C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/Scripts/CMakeFiles/edit_cache.dir
+C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/Scripts/CMakeFiles/rebuild_cache.dir

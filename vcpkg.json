@@ -1,0 +1,19 @@
+{
+  "dependencies": [
+    "fastgltf",
+    "glm",
+    "imguizmo",
+    "nlohmann-json",
+    "spirv-headers",
+    "stb",
+    "vulkan",
+    "vulkan-memory-allocator",
+    {
+      "name": "sdl3",
+      "default-features": false,
+      "features": [
+        "vulkan"
+      ]
+    }
+  ]
+}

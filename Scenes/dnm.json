@@ -1,0 +1,13 @@
+{
+    "textures": [
+    ],
+    "assets": [
+        "Sponza.glb"
+    ],
+    "environmentMap": {
+        "name": "autumn_field_puresky_1k.hdr"
+    },
+    "scripts": [
+        "CameraManager"
+    ]
+}

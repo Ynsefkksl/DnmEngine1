@@ -1,0 +1,171 @@
+Package: vcpkg-cmake-config
+Version: 2024-05-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: b5ac0f6fe279ff775b789e923f8051fbbbe643806b87dd75f4aa1a185b8a9504
+Status: install ok installed
+
+Package: vcpkg-cmake
+Version: 2024-04-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 30f866e4d50c00f6aeeba9ce24a19567bccc4f4e8ae2197f6dc9365a122f7b75
+Status: install ok installed
+
+Package: simdjson
+Version: 3.10.1
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: a0faf1356bf9a14c9d561be24c960b2f26962c6f0475e0d249db744727d64885
+Description: An extremely fast JSON library that can parse gigabytes of JSON per second
+Default-Features: deprecated, exceptions, threads, utf8-validation
+Status: install ok installed
+
+Package: simdjson
+Feature: deprecated
+Architecture: x64-windows
+Multi-Arch: same
+Description: Enable deprecated APIs
+Status: install ok installed
+
+Package: simdjson
+Feature: exceptions
+Architecture: x64-windows
+Multi-Arch: same
+Description: Enable exception-throwing interface
+Status: install ok installed
+
+Package: simdjson
+Feature: threads
+Architecture: x64-windows
+Multi-Arch: same
+Description: Link with thread support
+Status: install ok installed
+
+Package: simdjson
+Feature: utf8-validation
+Architecture: x64-windows
+Multi-Arch: same
+Description: Enable UTF-8 validation
+Status: install ok installed
+
+Package: fastgltf
+Version: 0.8.0
+Depends: simdjson, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 631d91206db9ea8f40603b808dd92c53c66c4012b54b3ebabe8b74e5ac0236cf
+Description: A modern C++17 glTF 2.0 library focused on speed, correctness, and usability
+Status: install ok installed
+
+Package: glm
+Version: 1.0.1
+Port-Version: 3
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: c74053ac6ea98a3b036db8a593beb48c36636b663c6fe7c4c16436fe85b481e8
+Description: OpenGL Mathematics (GLM)
+Status: install ok installed
+
+Package: imgui
+Version: 1.91.0
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 41dad6e257b774c77fea8114312f01470c7c083a4898d91d64875039b0066705
+Description: Bloat-free Immediate Mode Graphical User interface for C++ with minimal dependencies.
+Status: install ok installed
+
+Package: imguizmo
+Version: 2024-05-29
+Port-Version: 1
+Depends: imgui, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: f5dc0238f73c55bf217c71eb09f4cf64d650b8d31e726f62fd48ff3e3d31f0a1
+Description: Immediate mode 3D gizmo for scene editing and other controls based on Dear ImGui
+Status: install ok installed
+
+Package: nlohmann-json
+Version: 3.11.3
+Port-Version: 1
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 6dce12a185e1ca028d49f927aac370da459c544c9a1f6b7a684dd7a2bf65e939
+Description: JSON for Modern C++
+Status: install ok installed
+
+Package: sdl3
+Version: 3.1.6-preview
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: f7cf874e9a9b2360ca301c025ffe3ec2c79991b4f50965b6db6a141bf748a531
+Description: Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D.
+Status: install ok installed
+
+Package: sdl3
+Feature: vulkan
+Architecture: x64-windows
+Multi-Arch: same
+Description: Vulkan functionality for SDL
+Status: install ok installed
+
+Package: spirv-headers
+Version: 1.3.296.0
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e0dccf0da0de9509bfee6ac547fb0a617f7f357310b7fe18a8b8d50412acc0b6
+Description: Machine-readable files for the SPIR-V Registry
+Status: install ok installed
+
+Package: stb
+Version: 2024-07-29
+Port-Version: 1
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 92e7e47379f53d502bd037a6a8de139217f5fd95ca239ba269b8dffdb6a1f6a9
+Description: public domain header-only libraries
+Status: install ok installed
+
+Package: vulkan-headers
+Version: 1.3.296.0
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 5bd3c12f60a64361fc9cd6c095c983ef4107611b7f80db2e1ad680f4c0aa472e
+Description: Vulkan header files and API registry
+Status: install ok installed
+
+Package: vulkan-loader
+Version: 1.3.296.0
+Depends: vcpkg-cmake, vcpkg-cmake-config, vulkan-headers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 44d60e53280f49af466f1bcaf06ca08c05b2abe56f35fce18432b98c7034881b
+Description: Vulkan Development Tools
+Status: install ok installed
+
+Package: vulkan
+Version: 2023-12-17
+Depends: vcpkg-cmake, vulkan-headers, vulkan-loader
+Architecture: x64-windows
+Multi-Arch: same
+Abi: da0ef120b3b996db31dd0b95402f95a5bd2abafb530928e73c30681fc550838d
+Description: A stub package that ensures that Vulkan headers and a loader are available.
+    On Android, the NDK provides a loader at API level 24 or higher.
+Status: install ok installed
+
+Package: vulkan-memory-allocator
+Version: 3.1.0
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: c0d028944455bfff15e062153d3e774cc008ad07678057666172d823fe23834f
+Description: Easy to integrate Vulkan memory allocation library from GPUOpen
+Status: install ok installed
+

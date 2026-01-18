@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/cmake_install.cmake",
+		"C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/Engine/cmake_install.cmake",
+		"C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/Scripts/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

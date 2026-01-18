@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "filesystem": "cpp",
+        "functional": "cpp",
+        "xmemory": "cpp"
+    },
+    "C_Cpp.default.compileCommands": [
+        "${workspaceFolder}/Bin/compile_commands.json"
+    ],
+    "glsllint.glslangValidatorArgs": [
+        "-V"
+    ],
+    "clangd.arguments": [
+        "--header-insertion=never",
+    ],
+    "cmake.buildArgs": ["-j8"]
+}
