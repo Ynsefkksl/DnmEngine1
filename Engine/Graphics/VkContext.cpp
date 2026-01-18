@@ -179,8 +179,8 @@ void VkContext::CreateDevice(std::vector<const char*>& requireExtensions, std::v
 
     //renderdoc problems, some device dosn't support capture replay
     features12.bufferDeviceAddress = vk::True;
-    features11.storageInputOutput16 = vk::True;
-    features12.shaderFloat16 = vk::True;
+    features11.storageInputOutput16 = vk::False;
+    features12.shaderFloat16 = vk::False;
     features13.synchronization2 = vk::True;
     features13.dynamicRendering = vk::True;
     features12.descriptorIndexing = vk::True;

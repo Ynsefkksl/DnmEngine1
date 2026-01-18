@@ -7,14 +7,14 @@
 
 # =============================================================================
 # Project: game
-# Configurations: Debug
+# Configurations: Release
 # =============================================================================
 # =============================================================================
 
 #############################################
 # Rule for generating CXX dependencies.
 
-rule CXX_SCAN__game_Debug
+rule CXX_SCAN__game_Release
   depfile = $DEP_FILE
   command = C:\WINDOWS\system32\cmd.exe /C ""C:/Program Files/LLVM/bin/clang-scan-deps.exe" -format=p1689 -- C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE $DEFINES $INCLUDES $FLAGS -x c++ $in -c -o $OBJ_FILE -resource-dir "C:/Program Files/LLVM/lib/clang/21" -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE > $DYNDEP_INTERMEDIATE_FILE.tmp && "C:/Program Files/CMake/bin/cmake.exe" -E rename $DYNDEP_INTERMEDIATE_FILE.tmp $DYNDEP_INTERMEDIATE_FILE"
   description = Scanning $in for CXX dependencies
@@ -23,7 +23,7 @@ rule CXX_SCAN__game_Debug
 #############################################
 # Rule to generate ninja dyndep files for CXX.
 
-rule CXX_DYNDEP__game_Debug
+rule CXX_DYNDEP__game_Release
   command = "C:\Program Files\CMake\bin\cmake.exe" -E cmake_ninja_dyndep --tdi=CMakeFiles\game.dir\CXXDependInfo.json --lang=CXX --modmapfmt=clang --dd=$out @$out.rsp
   description = Generating CXX dyndep file $out
   rspfile = $out.rsp
@@ -34,7 +34,7 @@ rule CXX_DYNDEP__game_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__game_scanned_Debug
+rule CXX_COMPILER__game_scanned_Release
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE @$DYNDEP_MODULE_MAP_FILE -o $out -c $in
@@ -44,7 +44,7 @@ rule CXX_COMPILER__game_scanned_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__game_unscanned_Debug
+rule CXX_COMPILER__game_unscanned_Release
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -54,7 +54,7 @@ rule CXX_COMPILER__game_unscanned_Debug
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__game_Debug
+rule CXX_EXECUTABLE_LINKER__game_Release
   command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE -nostartfiles -nostdlib $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Xlinker /MANIFEST:EMBED -Xlinker /implib:$TARGET_IMPLIB -Xlinker /pdb:$TARGET_PDB -Xlinker /version:0.0  $LINK_PATH $LINK_LIBRARIES $MANIFESTS && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
@@ -71,7 +71,7 @@ rule CUSTOM_COMMAND
 #############################################
 # Rule for generating CXX dependencies.
 
-rule CXX_SCAN__Engine_Debug
+rule CXX_SCAN__Engine_Release
   depfile = $DEP_FILE
   command = C:\WINDOWS\system32\cmd.exe /C ""C:/Program Files/LLVM/bin/clang-scan-deps.exe" -format=p1689 -- C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE $DEFINES $INCLUDES $FLAGS -x c++ $in -c -o $OBJ_FILE -resource-dir "C:/Program Files/LLVM/lib/clang/21" -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE > $DYNDEP_INTERMEDIATE_FILE.tmp && "C:/Program Files/CMake/bin/cmake.exe" -E rename $DYNDEP_INTERMEDIATE_FILE.tmp $DYNDEP_INTERMEDIATE_FILE"
   description = Scanning $in for CXX dependencies
@@ -80,7 +80,7 @@ rule CXX_SCAN__Engine_Debug
 #############################################
 # Rule to generate ninja dyndep files for CXX.
 
-rule CXX_DYNDEP__Engine_Debug
+rule CXX_DYNDEP__Engine_Release
   command = "C:\Program Files\CMake\bin\cmake.exe" -E cmake_ninja_dyndep --tdi=Engine\CMakeFiles\Engine.dir\CXXDependInfo.json --lang=CXX --modmapfmt=clang --dd=$out @$out.rsp
   description = Generating CXX dyndep file $out
   rspfile = $out.rsp
@@ -91,7 +91,7 @@ rule CXX_DYNDEP__Engine_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__Engine_scanned_Debug
+rule CXX_COMPILER__Engine_scanned_Release
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE @$DYNDEP_MODULE_MAP_FILE -o $out -c $in
@@ -101,7 +101,7 @@ rule CXX_COMPILER__Engine_scanned_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__Engine_unscanned_Debug
+rule CXX_COMPILER__Engine_unscanned_Release
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -111,7 +111,7 @@ rule CXX_COMPILER__Engine_unscanned_Debug
 #############################################
 # Rule for linking CXX shared library.
 
-rule CXX_SHARED_LIBRARY_LINKER__Engine_Debug
+rule CXX_SHARED_LIBRARY_LINKER__Engine_Release
   command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE -nostartfiles -nostdlib $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -o $TARGET_FILE  -Xlinker /MANIFEST:EMBED -Xlinker /implib:$TARGET_IMPLIB -Xlinker /pdb:$TARGET_PDB -Xlinker /version:0.0 $in $LINK_PATH $LINK_LIBRARIES $MANIFESTS && $POST_BUILD"
   description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
@@ -120,7 +120,7 @@ rule CXX_SHARED_LIBRARY_LINKER__Engine_Debug
 #############################################
 # Rule for generating CXX dependencies.
 
-rule CXX_SCAN__CameraManager_Debug
+rule CXX_SCAN__CameraManager_Release
   depfile = $DEP_FILE
   command = C:\WINDOWS\system32\cmd.exe /C ""C:/Program Files/LLVM/bin/clang-scan-deps.exe" -format=p1689 -- C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE $DEFINES $INCLUDES $FLAGS -x c++ $in -c -o $OBJ_FILE -resource-dir "C:/Program Files/LLVM/lib/clang/21" -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE > $DYNDEP_INTERMEDIATE_FILE.tmp && "C:/Program Files/CMake/bin/cmake.exe" -E rename $DYNDEP_INTERMEDIATE_FILE.tmp $DYNDEP_INTERMEDIATE_FILE"
   description = Scanning $in for CXX dependencies
@@ -129,7 +129,7 @@ rule CXX_SCAN__CameraManager_Debug
 #############################################
 # Rule to generate ninja dyndep files for CXX.
 
-rule CXX_DYNDEP__CameraManager_Debug
+rule CXX_DYNDEP__CameraManager_Release
   command = "C:\Program Files\CMake\bin\cmake.exe" -E cmake_ninja_dyndep --tdi=Scripts\CMakeFiles\CameraManager.dir\CXXDependInfo.json --lang=CXX --modmapfmt=clang --dd=$out @$out.rsp
   description = Generating CXX dyndep file $out
   rspfile = $out.rsp
@@ -140,7 +140,7 @@ rule CXX_DYNDEP__CameraManager_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__CameraManager_scanned_Debug
+rule CXX_COMPILER__CameraManager_scanned_Release
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE @$DYNDEP_MODULE_MAP_FILE -o $out -c $in
@@ -150,7 +150,7 @@ rule CXX_COMPILER__CameraManager_scanned_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__CameraManager_unscanned_Debug
+rule CXX_COMPILER__CameraManager_unscanned_Release
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -160,7 +160,7 @@ rule CXX_COMPILER__CameraManager_unscanned_Debug
 #############################################
 # Rule for linking CXX shared library.
 
-rule CXX_SHARED_LIBRARY_LINKER__CameraManager_Debug
+rule CXX_SHARED_LIBRARY_LINKER__CameraManager_Release
   command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE -nostartfiles -nostdlib $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -o $TARGET_FILE  -Xlinker /MANIFEST:EMBED -Xlinker /implib:$TARGET_IMPLIB -Xlinker /pdb:$TARGET_PDB -Xlinker /version:0.0 $in $LINK_PATH $LINK_LIBRARIES $MANIFESTS && $POST_BUILD"
   description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
@@ -170,7 +170,7 @@ rule CXX_SHARED_LIBRARY_LINKER__CameraManager_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\yunus\OneDrive\Belgeler\GitHub\DnmEngine -BC:\Users\yunus\OneDrive\Belgeler\GitHub\DnmEngine\build
+  command = "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\yunus\OneDrive\Belgeler\GitHub\DnmEngine1 -BC:\Users\yunus\OneDrive\Belgeler\GitHub\DnmEngine1\build
   description = Re-running CMake...
   generator = 1
 

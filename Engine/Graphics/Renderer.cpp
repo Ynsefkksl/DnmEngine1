@@ -228,7 +228,6 @@ void Renderer::CreateResources() {
             }));
     }
 
-    //TODO: switch to dynamic rendering
 /*
     *
         {

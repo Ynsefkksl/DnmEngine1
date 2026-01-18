@@ -1,9 +1,9 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/cmake_install.cmake",
-		"C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/Engine/cmake_install.cmake",
-		"C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine/build/Scripts/cmake_install.cmake"
+		"C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine1/build/cmake_install.cmake",
+		"C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine1/build/Engine/cmake_install.cmake",
+		"C:/Users/yunus/OneDrive/Belgeler/GitHub/DnmEngine1/build/Scripts/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
